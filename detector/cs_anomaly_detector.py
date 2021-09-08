@@ -426,6 +426,7 @@ class CSAnomalyDetector:
                     task_return_event.clear()
                     task_return_event.wait()
                     if finished:
+                        print(total_retries)
                         result_queue.put(total_retries)
                         return
                 wb, we, rec_window, retries, sample_score = result_queue.get()
