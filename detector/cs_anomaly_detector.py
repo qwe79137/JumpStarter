@@ -407,6 +407,7 @@ class CSAnomalyDetector:
             win_r = min(n, win_l + window)
             # 窗口右端点索引 窗口数据[win_l, win_r)
             task_queue.put((win_l, win_r, groups[win_l // cycle]))
+            print(task_queue.qsize())
             needed_weight[win_l:win_r] += 1
             if win_r >= n:
                 break
